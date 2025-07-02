@@ -112,5 +112,19 @@
     <p>Prepare-se para descobrir mais uma poderosa história contada por Jesus. Continue essa trilogia que revela o coração do Pai em busca dos Seus filhos.</p>
     <p><strong>Em breve:</strong> novas reflexões e devocionais!</p>
   </div>
+  <!-- Script: salvar estado dos checkboxes -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const totalDias = 6;
+      for (let i = 1; i <= totalDias; i++) {
+        const checkbox = document.getElementById(`check${i}`);
+        const savedState = localStorage.getItem(`check${i}`);
+        if (savedState === 'true') checkbox.checked = true;
+        checkbox.addEventListener('change', () => {
+          localStorage.setItem(`check${i}`, checkbox.checked);
+        });
+      }
+    });
+  </script>
 </body>
 </html>
